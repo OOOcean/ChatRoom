@@ -2,15 +2,12 @@
     <div id="chatRoom-pc">
         <div style="width:65%">
             <div class="content" id="content">
-                <!-- <div v-for="content in contentList" v-html="content"></div> -->
             </div>
             <div class="sendcontrol">
                 <div class="sendtext" id="inputMessage" contenteditable="true"></div> 
-                <!-- <input class="sendtext" id="inputMessage"></input>  -->
                 &nbsp;
                 <a> <span style="padding:3px 6px;border:1px solid rgb(138, 107, 107);border-radius:4px;font-size:0.8rem;position:relative;top:-8px;" @click="sendMessage">发送</span> </a> 
                 
-                <!-- <i class="iconfont send-icon" @click="sendMessage">&#xe69d;</i> -->
             </div>
         </div>
         
