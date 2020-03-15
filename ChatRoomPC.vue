@@ -76,7 +76,7 @@ export default {
         }
     },
     mounted(){
-        this.wsUrl = "wss://studentb.fengxueba.com/xueba-student/chatRoomServer/"+this.liveChapterId+"/" + "老师" + "/" + 0 + "-first";
+        this.wsUrl = "wss://localhost:8080/chatRoomServer/"+this.liveChapterId+"/" + "老师" + "/" + 0 + "-first";
         this.createWebsocket();
         let _this = this;
         this.sendTimer = setInterval(()=>{
@@ -104,7 +104,7 @@ export default {
             if(this.lockReconnect) {
                 return;
             };
-            this.wsUrl = "wss://studentb.fengxueba.com/xueba-student/chatRoomServer/"+this.liveChapterId+"/" + "老师" + "/" + 0;
+            this.wsUrl = "wss://localhost:8080/chatRoomServer/"+this.liveChapterId+"/" + "老师" + "/" + 0;
             this.lockReconnect = true;
             let _this = this;
             this.timer = setTimeout(function () {
