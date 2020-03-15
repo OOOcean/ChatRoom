@@ -53,7 +53,7 @@ export default {
     },
     mounted(){
         this.getLiveChapterInfo();
-        this.wsUrl = "wss://studentb.fengxueba.com/xueba-student/chatRoomServer/"+this.liveChapterId+"/" + this.user.nickName + "/" + localStorage.getItem("studentId") + "-first";
+        this.wsUrl = "wss://localhost:8080/chatRoomServer/"+this.liveChapterId+"/" + this.user.nickName + "/" + localStorage.getItem("studentId") + "-first";
         this.createWebsocket();
         let _this = this;
         this.sendTimer = setInterval(()=>{
@@ -93,7 +93,7 @@ export default {
             if(this.lockReconnect) {
                 return;
             };
-            this.wsUrl = "wss://studentb.fengxueba.com/xueba-student/chatRoomServer/"+this.liveChapterId+"/"+this.user.nickName + "/" + localStorage.getItem("studentId");
+            this.wsUrl = "wss://localhost:8080/chatRoomServer/"+this.liveChapterId+"/"+this.user.nickName + "/" + localStorage.getItem("studentId");
             this.lockReconnect = true;
             let _this = this;
             this.timer = setTimeout(function () {
@@ -131,8 +131,6 @@ export default {
                     var distance = msg.scrollHeight - msg.offsetHeight;
                     msg.scrollTop = distance;
                     // _this.heart();
-                
-                
             }
             this.ws.onclose = function(ev){
                 if(_this.flag == 1)
@@ -240,9 +238,6 @@ export default {
                     color: #ffa500;
                 }
             }
-
-            
-
             .paragraph{
                 padding-bottom: 0.4rem;
                 word-wrap:break-word;
@@ -258,8 +253,6 @@ export default {
                 }
             }
         }
-        
-        
         .sendcontrol{
             position: relative;
             width: 98%;
@@ -276,7 +269,6 @@ export default {
                 position: relative;
                 display: inline-block;
                 padding: 2px 4px;
-
             }
             .send-icon{
                 font-size: 1.6rem;
